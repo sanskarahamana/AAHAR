@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aahar — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/aahar.css" />
+</head>
+<body>
+<div class="bg-grid"></div>
+<nav class="nav glass">
+  <a href="/dashboard.html" class="brand">AAHAR<span class="dot"></span></a>
+  <div class="nav-links">
+    <a href="/dashboard.html" class="active">Dashboard</a>
+    <a href="/progress.html">Progress</a>
+    <a href="/index.html">Recalibrate</a>
+  </div>
+</nav>
+
+<main class="container">
+  <header class="page-head">
+    <p class="eyebrow">Today · <span id="today-date"></span></p>
+    <h1>Daily Intake</h1>
+    <p class="sub" id="target-summary">Set your targets on the home page to begin.</p>
+  </header>
+
+  <section class="grid-3">
+    <article class="card glass">
+      <div class="card-head"><h3>Protein</h3><span class="unit">g</span></div>
+      <div class="metric"><span id="p-current">0</span><span class="slash">/</span><span id="p-target">—</span></div>
+      <div class="bar"><div class="bar-fill" id="p-bar"></div></div>
+    </article>
+    <article class="card glass">
+      <div class="card-head"><h3>Carbs</h3><span class="unit">g</span></div>
+      <div class="metric"><span id="c-current">0</span><span class="slash">/</span><span id="c-target">—</span></div>
+      <div class="bar"><div class="bar-fill" id="c-bar"></div></div>
+    </article>
+    <article class="card glass">
+      <div class="card-head"><h3>Fats</h3><span class="unit">g</span></div>
+      <div class="metric"><span id="f-current">0</span><span class="slash">/</span><span id="f-target">—</span></div>
+      <div class="bar"><div class="bar-fill" id="f-bar"></div></div>
+    </article>
+  </section>
+
+  <section class="card glass calorie-card">
+    <div>
+      <p class="eyebrow">Calories</p>
+      <div class="metric large"><span id="kcal-current">0</span><span class="slash">/</span><span id="kcal-target">—</span></div>
+    </div>
+    <button class="btn-primary" id="open-log">+ Quick Log</button>
+  </section>
+
+  <section class="card glass">
+    <div class="card-head"><h3>Today's Log</h3><button class="btn-ghost" id="clear-log">Clear</button></div>
+    <ul class="log-list" id="log-list"><li class="empty">No entries yet.</li></ul>
+  </section>
+
+  <section class="card glass weight-card">
+    <div>
+      <p class="eyebrow">Log Weight</p>
+      <p class="sub">Latest: <span id="latest-weight">—</span></p>
+    </div>
+    <div class="row">
+      <input type="number" step="0.1" id="weight-input" placeholder="kg" />
+      <button class="btn-primary" id="log-weight">Save</button>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="log-modal" hidden>
+  <div class="modal-card glass">
+    <h3>Quick Log</h3>
+    <label>Name <input type="text" id="m-name" placeholder="Chicken breast" /></label>
+    <div class="grid-4">
+      <label>Protein <input type="number" id="m-p" placeholder="0" /></label>
+      <label>Carbs <input type="number" id="m-c" placeholder="0" /></label>
+      <label>Fats <input type="number" id="m-f" placeholder="0" /></label>
+      <label>Kcal <input type="number" id="m-k" placeholder="auto" /></label>
+    </div>
+    <div class="row end">
+      <button class="btn-ghost" id="close-log">Cancel</button>
+      <button class="btn-primary" id="save-log">Add Entry</button>
+    </div>
+  </div>
+</div>
+
+<script src="/aahar.js"></script>
+<script>Aahar.initDashboard();</script>
+</body>
+</html>

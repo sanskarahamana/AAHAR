@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aahar — Welcome</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/aahar.css" />
+</head>
+<body class="onboarding">
+<div class="bg-grid"></div>
+
+<main class="onboard-wrap">
+  <header class="onboard-head">
+    <a href="/index.html" class="brand xl">AAHAR<span class="dot"></span></a>
+    <p class="eyebrow">Recomposition Engine</p>
+    <h1>Engineer your daily intake.</h1>
+    <p class="sub">A precise starting point for your nutrition. Three inputs. One goal.</p>
+  </header>
+
+  <section class="card glass onboard-card">
+    <div class="grid-2">
+      <label>Weight (kg)
+        <input type="number" id="weight" step="0.1" placeholder="62.5" value="62.5" />
+      </label>
+      <label>Height (cm)
+        <input type="number" id="height" step="0.1" placeholder="175" value="175" />
+      </label>
+      <label class="span-2">Age
+        <input type="number" id="age" placeholder="25" value="25" />
+      </label>
+    </div>
+
+    <p class="eyebrow mt">Your Goal</p>
+    <div class="goal-toggle" role="radiogroup" aria-label="Goal">
+      <button type="button" class="goal-opt" data-goal="bulk">Bulk</button>
+      <button type="button" class="goal-opt" data-goal="cut">Cut</button>
+      <button type="button" class="goal-opt active" data-goal="recomp">Recomposition</button>
+    </div>
+
+    <button class="btn-primary full mt" id="calc">Calculate My Targets →</button>
+    <p class="sub muted micro">Mifflin–St Jeor BMR · moderate activity baseline · recomp-tuned macros.</p>
+  </section>
+
+  <p class="footnote">Already set up? <a href="/dashboard.html">Go to your dashboard →</a></p>
+</main>
+
+<script src="/aahar.js"></script>
+<script>Aahar.initOnboarding();</script>
+</body>
+</html>

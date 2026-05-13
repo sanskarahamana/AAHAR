@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aahar — Progress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/aahar.css" />
+</head>
+<body>
+<div class="bg-grid"></div>
+<nav class="nav glass">
+  <a href="/dashboard.html" class="brand">AAHAR<span class="dot"></span></a>
+  <div class="nav-links">
+    <a href="/dashboard.html">Dashboard</a>
+    <a href="/progress.html" class="active">Progress</a>
+    <a href="/index.html">Recalibrate</a>
+  </div>
+</nav>
+
+<main class="container">
+  <header class="page-head">
+    <p class="eyebrow">Analytics</p>
+    <h1>Progress</h1>
+    <p class="sub">Historical weight trend and macro consistency.</p>
+  </header>
+
+  <section class="grid-3">
+    <article class="card glass stat">
+      <p class="eyebrow">Current Weight</p>
+      <p class="big"><span id="s-weight">—</span><span class="unit"> kg</span></p>
+    </article>
+    <article class="card glass stat">
+      <p class="eyebrow">Δ vs Start</p>
+      <p class="big"><span id="s-delta">—</span><span class="unit"> kg</span></p>
+    </article>
+    <article class="card glass stat">
+      <p class="eyebrow">Macro Consistency (7d)</p>
+      <p class="big"><span id="s-consistency">—</span><span class="unit">%</span></p>
+    </article>
+  </section>
+
+  <section class="card glass">
+    <div class="card-head"><h3>Weight Trend</h3></div>
+    <svg id="weight-chart" viewBox="0 0 800 260" preserveAspectRatio="none" class="chart"></svg>
+  </section>
+
+  <section class="card glass">
+    <div class="card-head"><h3>Macro Hit Rate · Last 7 Days</h3></div>
+    <div class="bars-7" id="bars-7"></div>
+  </section>
+</main>
+
+<script src="/aahar.js"></script>
+<script>Aahar.initProgress();</script>
+</body>
+</html>
